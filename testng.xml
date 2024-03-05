@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IMDB Test Suite">
+    <listeners>
+        <listener class-name="com.imdb.imdbtest.listener.TestListener"></listener>
+    </listeners>
+    <test name="IMDB Test">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="com.imdb.imdbtest.test.imdb.ImdbTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
