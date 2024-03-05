@@ -28,3 +28,21 @@ if application is not builded successfully
 ```
 mvn allure:serve
 ```
+
+### Project Overview 
+- In `ImdbTest`class there is test method to run the test case. Running can be done in terminal with the information is declared above or running can be done in IDE by running the testng.xml file or running the test case.
+- All used pages implemented in Page Object Pattern. Pages are mapped as object, component. Page's actions are implemented in page objects
+- `BasePage` class has main methods that a page can do. Clicking, sending keys to input, scroll down and etc.
+- When a page is created, driver instance is injected to page object. All pages need a driver. This driver is created in `BaseTest` class
+- `BaseTest` class is running at every test method runs. Before and After methods are methods that runs before and after, this annotations can be different in method, class, test levels.
+- Driver instance is created when test started, as browser name driver is injected to pages. If you select firefox, firefox instance will be injected.
+- All driver instance will be created in `DriverManager` class. These drivers can be incremented as needs. There can be remote or local different kind of drivers.
+- `TestListener` class is listening the test methods, writes logs of test methods
+
+#### Tech Stack
+
+- Selenium WebDriver
+- WebDriverManager
+- TestNG
+- Allure Test Report
+
