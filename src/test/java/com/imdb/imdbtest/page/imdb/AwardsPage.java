@@ -6,14 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AvardsPage extends BasePage {
+public class AwardsPage extends BasePage {
     @FindBy(xpath = "//a[contains(.,'Betty Blue')]")
     private WebElement filmTitleButton;
 
-    public AvardsPage(WebDriver driver) {
+    public AwardsPage(WebDriver driver) {
         super(driver);
     }
-    
+
     @Step("Scroll down to film")
     public void scrollDownToFilm() {
         scrollDownToElement(filmTitleButton);
@@ -23,8 +23,5 @@ public class AvardsPage extends BasePage {
     public void selectFilm() {
         click(filmTitleButton);
     }
-
-
-
 
 }

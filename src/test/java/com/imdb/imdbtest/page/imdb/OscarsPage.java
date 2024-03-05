@@ -1,6 +1,7 @@
 package com.imdb.imdbtest.page.imdb;
 
 import com.imdb.imdbtest.page.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,7 @@ public class OscarsPage extends BasePage {
         super(driver);
     }
 
+    @Step("Scroll down to event history")
     public void scrollToEventHistory() {
         scrollDownToElement(eventHistoryButton);
         properWait(2000);

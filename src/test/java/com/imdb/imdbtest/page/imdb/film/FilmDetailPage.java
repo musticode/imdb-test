@@ -1,6 +1,7 @@
 package com.imdb.imdbtest.page.imdb.film;
 
 import com.imdb.imdbtest.page.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,7 +26,7 @@ public class FilmDetailPage extends BasePage {
     private WebElement secondStarElement;
 
     @FindBy(xpath = "(//li[contains(@role,'presentation')])[16]")
-    private WebElement thirsStarElement;
+    private WebElement thirdStarElement;
 
 
     private Set<String> directors = new HashSet<>();
@@ -36,13 +37,14 @@ public class FilmDetailPage extends BasePage {
         super(driver);
     }
 
+    @Step("Saving film details")
     public void saveFilmDetails(){
         directors.add(getText(directorElement));
         writers.add(getText(firstWriterElement));
         writers.add(getText(secondWriterElement));
         stars.add(getText(firstStarElement));
         stars.add(getText(secondStarElement));
-        stars.add(getText(thirsStarElement));
+        stars.add(getText(thirdStarElement));
 
         directors.forEach(item -> System.out.println("Director" + item));
         writers.forEach(item -> System.out.println("Writer" + item));
@@ -50,10 +52,12 @@ public class FilmDetailPage extends BasePage {
 
     }
 
+    @Step("Director information matched")
     public boolean directorInformationMatched() {
         return directors.contains(getText(directorElement));
     }
 
+    @Step("Writer information matched")
     public boolean writerInformationMatched() {
         boolean allMatched = false;
 
@@ -64,12 +68,11 @@ public class FilmDetailPage extends BasePage {
         return allMatched;
     }
 
-
-
+    @Step("Star information matched")
     public boolean starInformationMatched() {
 
         boolean allMatched = false;
-        if (checkStar(getText(firstStarElement)) && checkStar(getText(secondStarElement)) && checkStar(getText(thirsStarElement))){
+        if (checkStar(getText(firstStarElement)) && checkStar(getText(secondStarElement)) && checkStar(getText(thirdStarElement))){
             allMatched = true;
         }
 

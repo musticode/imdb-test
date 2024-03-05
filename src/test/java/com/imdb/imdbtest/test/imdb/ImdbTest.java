@@ -1,7 +1,7 @@
 package com.imdb.imdbtest.test.imdb;
 
 import com.imdb.imdbtest.constant.TestConstant;
-import com.imdb.imdbtest.page.imdb.AvardsPage;
+import com.imdb.imdbtest.page.imdb.AwardsPage;
 import com.imdb.imdbtest.page.imdb.HomePage;
 import com.imdb.imdbtest.page.imdb.OscarsPage;
 import com.imdb.imdbtest.page.imdb.film.FilmDetailPage;
@@ -14,7 +14,7 @@ public class ImdbTest extends BaseTest {
 
     HomePage homePage;
     OscarsPage oscarsPage;
-    AvardsPage avardsPage;
+    AwardsPage awardsPage;
     FilmDetailPage filmDetailPage;
 
 
@@ -23,7 +23,7 @@ public class ImdbTest extends BaseTest {
 
         homePage = new HomePage(driver);
         oscarsPage = new OscarsPage(driver);
-        avardsPage = new AvardsPage(driver);
+        awardsPage = new AwardsPage(driver);
         filmDetailPage = new FilmDetailPage(driver);
 
         homePage.navigateToMainPage();
@@ -31,8 +31,8 @@ public class ImdbTest extends BaseTest {
 
         oscarsPage.scrollToEventHistory();
 
-        avardsPage.scrollDownToFilm();
-        avardsPage.selectFilm();
+        awardsPage.scrollDownToFilm();
+        awardsPage.selectFilm();
 
         filmDetailPage.saveFilmDetails();
 
